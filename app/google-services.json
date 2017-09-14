@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "738707958580",
+    "firebase_url": "https://marine-embassy-175612.firebaseio.com",
+    "project_id": "marine-embassy-175612",
+    "storage_bucket": "marine-embassy-175612.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738707958580:android:7595fbc9abceda5b",
+        "android_client_info": {
+          "package_name": "br.com.projeto.teste.projetoteste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738707958580-5pnubefm6cm849nhlfm1rmpmp5rvj0m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9kLiXwa5CvPVvxE_0Ty8qRirCHiU-A8Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738707958580:android:13f334d18fbf8fc0",
+        "android_client_info": {
+          "package_name": "br.com.prottipo01.edu.prottipo_01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738707958580-5pnubefm6cm849nhlfm1rmpmp5rvj0m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9kLiXwa5CvPVvxE_0Ty8qRirCHiU-A8Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

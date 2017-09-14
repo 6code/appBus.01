@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">protótipo-01</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="BtnCadastrar">CADASTRAR</string>
+    <string name="Btn_Logout">SAIR</string>
+    <string name="title_activity_street">Map</string>
+</resources>

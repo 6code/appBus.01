@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.prottipo01.edu.prottipo_01.activity.MainActivity">
+
+    <TextView
+        android:id="@+id/s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="261dp"
+        android:text="Escolha a Rota"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/id_btn_logout"
+        android:layout_width="70dp"
+        android:layout_height="26dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:text="@string/Btn_Logout"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <Button
+        android:id="@+id/id_Button_rota_rapidinho"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:background="?attr/actionModeSplitBackground"
+        android:text="Rapidinho"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/id_btn_logout"
+        app:layout_constraintTop_toBottomOf="@+id/s"
+        app:layout_constraintVertical_bias="0.168"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/id_Button_rota_cidade"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="CIDADE"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/id_btn_logout"
+        app:layout_constraintTop_toBottomOf="@+id/id_Button_rota_rapidinho"
+        app:layout_constraintVertical_bias="0.017"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.625" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="335dp"
+        android:layout_height="199dp"
+        app:srcCompat="@drawable/es"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/s"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
