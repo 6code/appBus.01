@@ -47,9 +47,6 @@
         <activity
             android:name=".activity.CadastroActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.StreetActivity"
-            android:label="@string/title_activity_street"></activity>
     </application>
 
 </manifest>

@@ -84,7 +84,10 @@ public class Download extends AsyncTask<String,Integer,String>{
     protected void onPostExecute(String s) { //aqui ele volta para thrad principal e marca o mapa
         super.onPostExecute(s);
         try {
-            layer.addLayerToMap();
+
+            if(layer != null) {
+                layer.addLayerToMap();
+            }
 
          //   mProgressDialog.dismiss();
 

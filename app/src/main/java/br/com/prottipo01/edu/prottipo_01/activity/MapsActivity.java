@@ -86,14 +86,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //aqui eu chamo as funçoes onde eu faço as alterações no meu mapa
 
-
-        MinhaLocalização();
-        LoadMarkers();
-        LoadRotas();
-        MinhaLocalizaçãoBD();
-        // lerLocalizaçãoBD();
-     //  navegation();
-       // EventoDeClickMarkres();
+        MinhaLocalização();      //ativo minha localizaçao
+        LoadMarkers();           //Carrego os marcadores no mapa, as informaçoes vem do BD
+        LoadRotas();             //faço download das rotas e carrego no mapa
+        MinhaLocalizaçãoBD();    //gravo minha localização em tempo real no BD
+        lerLocalizaçãoBD();        //leio minha propria localização do banco de dados
+        EventoDeClickMarkres();   //capturo evento de click no marcador, e exibo mensagens ao usuaio
 
     }
 
@@ -111,6 +109,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    /*************************************************************************************************************/
 
     //verifica se p usuario tem permissao, se nao ele pede permissao
     public void MinhaLocalização() {
@@ -161,10 +160,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markers.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) { //datasnapshot captura qualquer  alteraçoes no BD
-
-                if (dataSnapshot.getChildren() != null) {
-                    LoadRotas();
-                }
 
                 Iterable<DataSnapshot> dataSnapshots = dataSnapshot.getChildren();
                 mMap.clear();
@@ -229,8 +224,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-                readLocationBD locationBD = dataSnapshot.getValue(readLocationBD.class);
-                mMap.addMarker(new MarkerOptions().position(new LatLng(locationBD.getLatitude(), locationBD.getLongitude())).title("Lendo Localização"));
+               // readLocationBD locationBD = dataSnapshot.getValue(readLocationBD.class);
+               // mMap.addMarker(new MarkerOptions().position(new LatLng(locationBD.getLatitude(), locationBD.getLongitude())).title("Lendo Localização"));
 
 
             }
@@ -244,56 +239,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     /*************************************************************************************************************/
-
-    public void teste() {
-
-
-        String serverKey = "AIzaSyDTUt4CBUnZRCCn3OFX1qxEpxKQs05qP5o";
-
-        LatLng origin = new LatLng(-3.779698, -49.675009);
-        final LatLng destination = new LatLng(-3.776872, -49.675535);
-
-        GoogleDirection.withServerKey(serverKey)
-                .from(origin)
-                .to(destination)
-                .transportMode(TransportMode.WALKING)
-                .language(Language.PORTUGUESE_BRAZIL)
-                .execute(new DirectionCallback() {
-                    @Override
-                    public void onDirectionSuccess(Direction direction, String rawBody) {
-                        // Do something here
-                        if (direction.isOK()) {
-
-                            Route route = direction.getRouteList().get(0);
-                            Leg leg = route.getLegList().get(0);
-
-                            ArrayList<LatLng> directionPositionList = leg.getDirectionPoint();
-                            PolylineOptions polylineOptions = DirectionConverter.createPolyline(MapsActivity.this, directionPositionList, 3, Color.RED);
-                            mMap.addPolyline(polylineOptions);
-                            // Do something
-                        }
-
-                    }
-
-                    @Override
-                    public void onDirectionFailure(Throwable t) {
-                        // Do something here
-                    }
-                });
-
-    }
-
-
-    public void navegation() {
-
-
-
-        Uri gmmIntentUri = Uri.parse("google.navigation:q=-3.776872, -49.675535");
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-        startActivity(mapIntent);
-
-    }
-
 
     public void EventoDeClickMarkres(){
 

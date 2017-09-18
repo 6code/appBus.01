@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 import br.com.prottipo01.edu.prottipo_01.R;
 import br.com.prottipo01.edu.prottipo_01.configure.configureFirebase;
-import br.com.prottipo01.edu.prottipo_01.configure.validaConexão;
 import br.com.prottipo01.edu.prottipo_01.model.user;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -60,25 +59,16 @@ public class CadastroActivity extends AppCompatActivity {
                 if (email.getText().toString().equals("") || senha.getText().toString().equals("")) {
                     Toast.makeText(CadastroActivity.this, "Preencha todos os campos!!", Toast.LENGTH_LONG).show();
                 } else {
-                    validaConex();
+                    cadastraUser();
+                    Toast.makeText(CadastroActivity.this, "Aguarde...", Toast.LENGTH_LONG).show();
+
                 }
             }
         });
     }
 
 
-    public void validaConex(){
 
-        validaConexão vld = new validaConexão(CadastroActivity.this);
-
-        if(vld.testaconexão() == true) {
-            cadastraUser();
-        }else {
-
-            Toast.makeText(CadastroActivity.this, "Sem conexão com a internet!!", Toast.LENGTH_LONG).show();
-
-        }
-    }
 
 
     public void cadastraUser(){

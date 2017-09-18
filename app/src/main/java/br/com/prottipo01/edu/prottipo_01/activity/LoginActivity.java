@@ -1,7 +1,6 @@
 package br.com.prottipo01.edu.prottipo_01.activity;
 
 import android.content.Intent;
-import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 import br.com.prottipo01.edu.prottipo_01.R;
 import br.com.prottipo01.edu.prottipo_01.configure.configureFirebase;
-import br.com.prottipo01.edu.prottipo_01.configure.validaConexão;
 import br.com.prottipo01.edu.prottipo_01.model.user;
 
 public class LoginActivity extends AppCompatActivity {
@@ -54,27 +52,16 @@ public class LoginActivity extends AppCompatActivity {
 
                     Toast.makeText(LoginActivity.this, "Preencha todos os campos!!", Toast.LENGTH_LONG).show();
 
-                }else{validaConex();}
+                }else{
+                    ValidarLogin();
+                    Toast.makeText(LoginActivity.this, "Aguarde...", Toast.LENGTH_LONG).show();
+
+                }
             }
         });
     }
 
 
-
-    public void validaConex(){
-
-        validaConexão vld = new validaConexão(LoginActivity.this);
-
-        if(vld.testaconexão() == true) {
-
-            ValidarLogin();
-
-        }else {
-
-            Toast.makeText(LoginActivity.this, "Sem conexão com a internet!!", Toast.LENGTH_LONG).show();
-
-        }
-    }
 
 
 
